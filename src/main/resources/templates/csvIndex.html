@@ -1,0 +1,236 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport"
+	content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+<!-- Bootstrap CSS -->
+<link rel="stylesheet"
+	href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css"
+	integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO"
+	crossorigin="anonymous">
+</head>
+<body>
+
+	<!-- Optional JavaScript -->
+	<!-- jQuery first, then Popper.js, then Bootstrap JS -->
+	<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
+		integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
+		crossorigin="anonymous"></script>
+	<script
+		src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js"
+		integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49"
+		crossorigin="anonymous"></script>
+	<script
+		src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js"
+		integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy"
+		crossorigin="anonymous"></script>
+
+	<h1 class="my-3 ml-3">Csv マスタ</h1>
+
+	<div class="col-5 ml-3">
+		<table class="table table-striped">
+			<thead>
+				<tr>
+					<th>ID</th>
+					<th>c1</th>
+					<th>c2</th>
+					<th>c3</th>
+					<th>c4</th>
+					<th>c5</th>
+					<th>c6</th>
+					<th>c7</th>
+					<th>c8</th>
+					<th>c9</th>
+					<th>c10</th>
+					<th>c11</th>
+					<th>c12</th>
+					<th>c13</th>
+					<th>c14</th>
+					<th>c15</th>
+					<th>c16</th>
+					<th>c17</th>
+					<th>c18</th>
+					<th>c19</th>
+					<th>c20</th>
+					<th>c21</th>
+					<th>c22</th>
+					<th>c23</th>
+					<th>c24</th>
+					<th>c25</th>
+					<th>c26</th>
+					<th>c27</th>
+					<th>c28</th>
+					<th>c29</th>
+					<th>c30</th>
+					<th>c31</th>
+					<th>c32</th>
+					<th>c33</th>
+					<th>c34</th>
+					<th>c35</th>
+					<th>c36</th>
+					<th>c37</th>
+					<th>c38</th>
+					<th>c39</th>
+					<th>c40</th>
+					<th>c41</th>
+					<th>c42</th>
+					<th>c43</th>
+					<th>c44</th>
+					<th>c45</th>
+					<th>c46</th>
+					<th>c47</th>
+					<th>c48</th>
+					<th>c49</th>
+					<th>c50</th>
+					<th>c51</th>
+					<th>c52</th>
+					<th>c53</th>
+					<th>c54</th>
+					<th>c55</th>
+					<th>c56</th>
+					<th>c57</th>
+					<th>c58</th>
+					<th>time_stamp</th>
+					<th>s_id</th>
+					<th>p_id</th>
+					<th>req_id</th>
+					<th>nen</th>
+					<th>tsuki</th>
+					<th>g_id</th>
+					<th>o_id</th>
+
+					<th><a href="/csv/csvNew" class="btn btn-primary">新規作成</a></th>
+					<th><a href="/" class="btn btn-info">メニュー</a></th>
+				</tr>
+			</thead>
+			<tbody>
+				<tr th:each="csv : ${csvs}" th:object="${csv}">
+					<td th:text="*{id}"></td>
+					<td th:text="*{c1}"></td>
+					<td th:text="*{c2}"></td>
+					<td th:text="*{c3}"></td>
+					<td th:text="*{c4}"></td>
+					<td th:text="*{c5}"></td>
+					<td th:text="*{c6}"></td>
+					<td th:text="*{c7}"></td>
+					<td th:text="*{c8}"></td>
+					<td th:text="*{c9}"></td>
+					<td th:text="*{c10}"></td>
+					<td th:text="*{c11}"></td>
+					<td th:text="*{c12}"></td>
+					<td th:text="*{c13}"></td>
+					<td th:text="*{c14}"></td>
+					<td th:text="*{c15}"></td>
+					<td th:text="*{c16}"></td>
+					<td th:text="*{c17}"></td>
+					<td th:text="*{c18}"></td>
+					<td th:text="*{c19}"></td>
+					<td th:text="*{c20}"></td>
+					<td th:text="*{c21}"></td>
+					<td th:text="*{c22}"></td>
+					<td th:text="*{c23}"></td>
+					<td th:text="*{c24}"></td>
+					<td th:text="*{c25}"></td>
+					<td th:text="*{c26}"></td>
+					<td th:text="*{c27}"></td>
+					<td th:text="*{c28}"></td>
+					<td th:text="*{c29}"></td>
+					<td th:text="*{c30}"></td>
+					<td th:text="*{c31}"></td>
+					<td th:text="*{c32}"></td>
+					<td th:text="*{c33}"></td>
+					<td th:text="*{c34}"></td>
+					<td th:text="*{c35}"></td>
+					<td th:text="*{c36}"></td>
+					<td th:text="*{c37}"></td>
+					<td th:text="*{c38}"></td>
+					<td th:text="*{c39}"></td>
+					<td th:text="*{c40}"></td>
+					<td th:text="*{c41}"></td>
+					<td th:text="*{c42}"></td>
+					<td th:text="*{c43}"></td>
+					<td th:text="*{c44}"></td>
+					<td th:text="*{c45}"></td>
+					<td th:text="*{c46}"></td>
+					<td th:text="*{c47}"></td>
+					<td th:text="*{c48}"></td>
+					<td th:text="*{c49}"></td>
+					<td th:text="*{c50}"></td>
+					<td th:text="*{c51}"></td>
+					<td th:text="*{c52}"></td>
+					<td th:text="*{c53}"></td>
+					<td th:text="*{c54}"></td>
+					<td th:text="*{c55}"></td>
+					<td th:text="*{c56}"></td>
+					<td th:text="*{c57}"></td>
+					<td th:text="*{c58}"></td>
+					<td th:text="*{time_stamp}"></td>
+					<td th:text="*{s_id}"></td>
+					<td th:text="*{req_id}"></td>
+					<td th:text="*{p_id}"></td>
+					<td th:text="*{nen}"></td>
+					<td th:text="*{tsuki}"></td>
+					<td th:text="*{g_id}"></td>
+					<td th:text="*{o_id}"></td>
+
+					<td><a th:href="@{/csv/{id}/edit(id=*{id})}"
+						class="btn btn-primary">編集</a></td>
+					<td>
+						<form th:action="@{/csv/{id}(id=*{id})}" th:method="post"
+							onSubmit="return delcheck()">
+							<input type="submit" class="btn btn-danger" value="削除" />
+						</form>
+					</td>
+				</tr>
+			</tbody>
+		</table>
+
+		<a href="/" class="btn btn-info">メニュー</a><span> <a
+			href="/csv/csvNew" class="btn btn-primary">新規作成</a>
+		</span>
+	</div>
+
+	<!-- jqueryの場合 -->
+
+	<script>
+		//formタグにサブミット時イベントを設定
+
+		$('form').submit(function(event) {
+
+			// 確認メッセージ表示
+			// 戻り値を変数resultに代入(trueまたはfalse)
+			var result = window.confirm('本当に削除してよろしいですか？');
+
+			// キャンセルボタンが押された場合
+			if (result == false) {
+
+				// サブミットを中止する
+				return false;
+			}
+		});
+	</script>
+
+	<!-- javascriptの場合
+
+		<script type="text/javascript">
+
+		function delcheck() {
+
+			if (window.confirm('削除してよろしいですか？')) { // 確認ダイアログを表示
+
+				return true; // 「OK」時は送信を実行
+
+			} else { // 「キャンセル」時の処理
+
+				window.alert('キャンセルされました'); // 警告ダイアログを表示
+				return false; // 送信を中止
+
+			}
+		}
+
+	</script> -->
+
+</body>
+</html>

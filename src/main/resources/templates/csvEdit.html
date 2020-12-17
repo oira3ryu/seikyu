@@ -1,0 +1,730 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport"
+	content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+<!-- Bootstrap CSS -->
+<link rel="stylesheet"
+	href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css"
+	integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO"
+	crossorigin="anonymous">
+</head>
+<body>
+
+	<!-- Optional JavaScript -->
+	<!-- jQuery first, then Popper.js, then Bootstrap JS -->
+	<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
+		integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
+		crossorigin="anonymous"></script>
+	<script
+		src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js"
+		integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49"
+		crossorigin="anonymous"></script>
+	<script
+		src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js"
+		integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy"
+		crossorigin="anonymous"></script>
+
+	<div class="container">
+
+		<div class="navbar">
+			<h1>csv 編集</h1>
+		</div>
+				<form th:action="@{/csv/{id}/edit(id=*{id})}" th:method="post"
+					th:object="${csv}">
+
+			<div class="form-row">
+				<label class="col-sm-3 col-form-label">ID<span
+					class="badge badge-danger"></span></label>
+				<div class="col-sm-9">
+					<p>
+					<input type="text" th:field="*{id}" disabled/>
+					</p>
+				</div>
+			</div>
+			<div class="form-row">
+				<label class="col-sm-3 col-form-label">
+					c1<span
+					class="badge badge-danger">必須</span></label>
+				<div class="col-sm-9">
+					<p>
+					<input type="text" th:field="*{c1}" />
+					</p>
+				</div>
+			</div>
+			<div class="form-row">
+				<label class="col-sm-3 col-form-label">
+					c2<span
+					class="badge badge-danger">必須</span></label>
+				<div class="col-sm-9">
+					<p>
+					<input type="text" th:field="*{c2}" />
+					</p>
+				</div>
+			</div>
+			<div class="form-row">
+				<label class="col-sm-3 col-form-label">
+					c3<span
+					class="badge badge-danger">必須</span></label>
+				<div class="col-sm-9">
+					<p>
+					<input type="text" th:field="*{c3}" />
+					</p>
+				</div>
+			</div>
+			<div class="form-row">
+				<label class="col-sm-3 col-form-label">
+					c4<span
+					class="badge badge-danger">必須</span></label>
+				<div class="col-sm-9">
+					<p>
+					<input type="text" th:field="*{c4}" />
+					</p>
+				</div>
+			</div>
+			<div class="form-row">
+				<label class="col-sm-3 col-form-label">
+					c5<span
+					class="badge badge-danger">必須</span></label>
+				<div class="col-sm-9">
+					<p>
+					<input type="text" th:field="*{c5}" />
+					</p>
+				</div>
+			</div>
+			<div class="form-row">
+				<label class="col-sm-3 col-form-label">
+					c6<span
+					class="badge badge-danger">必須</span></label>
+				<div class="col-sm-9">
+					<p>
+					<input type="text" th:field="*{c6}" />
+					</p>
+				</div>
+			</div>
+			<div class="form-row">
+				<label class="col-sm-3 col-form-label">
+					c7<span
+					class="badge badge-danger">必須</span></label>
+				<div class="col-sm-9">
+					<p>
+					<input type="text" th:field="*{c7}" />
+					</p>
+				</div>
+			</div>
+			<div class="form-row">
+				<label class="col-sm-3 col-form-label">
+					c8<span
+					class="badge badge-danger">必須</span></label>
+				<div class="col-sm-9">
+					<p>
+					<input type="text" th:field="*{c8}" />
+					</p>
+				</div>
+			</div>
+			<div class="form-row">
+				<label class="col-sm-3 col-form-label">
+					c9<span
+					class="badge badge-danger">必須</span></label>
+				<div class="col-sm-9">
+					<p>
+					<input type="text" th:field="*{c9}" />
+					</p>
+				</div>
+			</div>
+			<div class="form-row">
+				<label class="col-sm-3 col-form-label">
+					c10<span
+					class="badge badge-danger">必須</span></label>
+				<div class="col-sm-9">
+					<p>
+					<input type="text" th:field="*{c10}" />
+					</p>
+				</div>
+			</div>
+			<div class="form-row">
+				<label class="col-sm-3 col-form-label">
+					c11<span
+					class="badge badge-danger">必須</span></label>
+				<div class="col-sm-9">
+					<p>
+					<input type="text" th:field="*{c11}" />
+					</p>
+				</div>
+			</div>
+			<div class="form-row">
+				<label class="col-sm-3 col-form-label">
+					c12<span
+					class="badge badge-danger">必須</span></label>
+				<div class="col-sm-9">
+					<p>
+					<input type="text" th:field="*{c12}" />
+					</p>
+				</div>
+			</div>
+			<div class="form-row">
+				<label class="col-sm-3 col-form-label">
+					c13<span
+					class="badge badge-danger">必須</span></label>
+				<div class="col-sm-9">
+					<p>
+					<input type="text" th:field="*{c13}" />
+					</p>
+				</div>
+			</div>
+			<div class="form-row">
+				<label class="col-sm-3 col-form-label">
+					c14<span
+					class="badge badge-danger">必須</span></label>
+				<div class="col-sm-9">
+					<p>
+					<input type="text" th:field="*{c14}" />
+					</p>
+				</div>
+			</div>
+			<div class="form-row">
+				<label class="col-sm-3 col-form-label">
+					c15<span
+					class="badge badge-danger">必須</span></label>
+				<div class="col-sm-9">
+					<p>
+					<input type="text" th:field="*{c15}" />
+					</p>
+				</div>
+			</div>
+			<div class="form-row">
+				<label class="col-sm-3 col-form-label">
+					c16<span
+					class="badge badge-danger">必須</span></label>
+				<div class="col-sm-9">
+					<p>
+					<input type="text" th:field="*{c16}" />
+					</p>
+				</div>
+			</div>
+			<div class="form-row">
+				<label class="col-sm-3 col-form-label">
+					c17<span
+					class="badge badge-danger">必須</span></label>
+				<div class="col-sm-9">
+					<p>
+					<input type="text" th:field="*{c17}" />
+					</p>
+				</div>
+			</div>
+			<div class="form-row">
+				<label class="col-sm-3 col-form-label">
+					c18<span
+					class="badge badge-danger">必須</span></label>
+				<div class="col-sm-9">
+					<p>
+					<input type="text" th:field="*{c18}" />
+					</p>
+				</div>
+			</div>
+			<div class="form-row">
+				<label class="col-sm-3 col-form-label">
+					c19<span
+					class="badge badge-danger">必須</span></label>
+				<div class="col-sm-9">
+					<p>
+					<input type="text" th:field="*{c19}" />
+					</p>
+				</div>
+			</div>
+			<div class="form-row">
+				<label class="col-sm-3 col-form-label">
+					c20<span
+					class="badge badge-danger">必須</span></label>
+				<div class="col-sm-9">
+					<p>
+					<input type="text" th:field="*{c20}" />
+					</p>
+				</div>
+			</div>
+			<div class="form-row">
+				<label class="col-sm-3 col-form-label">
+					c21<span
+					class="badge badge-danger">必須</span></label>
+				<div class="col-sm-9">
+					<p>
+					<input type="text" th:field="*{c21}" />
+					</p>
+				</div>
+			</div>
+			<div class="form-row">
+				<label class="col-sm-3 col-form-label">
+					c22<span
+					class="badge badge-danger">必須</span></label>
+				<div class="col-sm-9">
+					<p>
+					<input type="text" th:field="*{c22}" />
+					</p>
+				</div>
+			</div>
+			<div class="form-row">
+				<label class="col-sm-3 col-form-label">
+					c23<span
+					class="badge badge-danger">必須</span></label>
+				<div class="col-sm-9">
+					<p>
+					<input type="text" th:field="*{c23}" />
+					</p>
+				</div>
+			</div>
+			<div class="form-row">
+				<label class="col-sm-3 col-form-label">
+					c24<span
+					class="badge badge-danger">必須</span></label>
+				<div class="col-sm-9">
+					<p>
+					<input type="text" th:field="*{c24}" />
+					</p>
+				</div>
+			</div>
+			<div class="form-row">
+				<label class="col-sm-3 col-form-label">
+					c25<span
+					class="badge badge-danger">必須</span></label>
+				<div class="col-sm-9">
+					<p>
+					<input type="text" th:field="*{c25}" />
+					</p>
+				</div>
+			</div>
+			<div class="form-row">
+				<label class="col-sm-3 col-form-label">
+					c26<span
+					class="badge badge-danger">必須</span></label>
+				<div class="col-sm-9">
+					<p>
+					<input type="text" th:field="*{c26}" />
+					</p>
+				</div>
+			</div>
+			<div class="form-row">
+				<label class="col-sm-3 col-form-label">
+					c27<span
+					class="badge badge-danger">必須</span></label>
+				<div class="col-sm-9">
+					<p>
+					<input type="text" th:field="*{c27}" />
+					</p>
+				</div>
+			</div>
+			<div class="form-row">
+				<label class="col-sm-3 col-form-label">
+					c28<span
+					class="badge badge-danger">必須</span></label>
+				<div class="col-sm-9">
+					<p>
+					<input type="text" th:field="*{c28}" />
+					</p>
+				</div>
+			</div>
+			<div class="form-row">
+				<label class="col-sm-3 col-form-label">
+					c29<span
+					class="badge badge-danger">必須</span></label>
+				<div class="col-sm-9">
+					<p>
+					<input type="text" th:field="*{c29}" />
+					</p>
+				</div>
+			</div>
+			<div class="form-row">
+				<label class="col-sm-3 col-form-label">
+					c30<span
+					class="badge badge-danger">必須</span></label>
+				<div class="col-sm-9">
+					<p>
+					<input type="text" th:field="*{c30}" />
+					</p>
+				</div>
+			</div>
+			<div class="form-row">
+				<label class="col-sm-3 col-form-label">
+					c31<span
+					class="badge badge-danger">必須</span></label>
+				<div class="col-sm-9">
+					<p>
+					<input type="text" th:field="*{c31}" />
+					</p>
+				</div>
+			</div>
+			<div class="form-row">
+				<label class="col-sm-3 col-form-label">
+					c32<span
+					class="badge badge-danger">必須</span></label>
+				<div class="col-sm-9">
+					<p>
+					<input type="text" th:field="*{c32}" />
+					</p>
+				</div>
+			</div>
+			<div class="form-row">
+				<label class="col-sm-3 col-form-label">
+					c33<span
+					class="badge badge-danger">必須</span></label>
+				<div class="col-sm-9">
+					<p>
+					<input type="text" th:field="*{c33}" />
+					</p>
+				</div>
+			</div>
+			<div class="form-row">
+				<label class="col-sm-3 col-form-label">
+					c34<span
+					class="badge badge-danger">必須</span></label>
+				<div class="col-sm-9">
+					<p>
+					<input type="text" th:field="*{c34}" />
+					</p>
+				</div>
+			</div>
+			<div class="form-row">
+				<label class="col-sm-3 col-form-label">
+					c35<span
+					class="badge badge-danger">必須</span></label>
+				<div class="col-sm-9">
+					<p>
+					<input type="text" th:field="*{c35}" />
+					</p>
+				</div>
+			</div>
+			<div class="form-row">
+				<label class="col-sm-3 col-form-label">
+					c36<span
+					class="badge badge-danger">必須</span></label>
+				<div class="col-sm-9">
+					<p>
+					<input type="text" th:field="*{c36}" />
+					</p>
+				</div>
+			</div>
+			<div class="form-row">
+				<label class="col-sm-3 col-form-label">
+					c37<span
+					class="badge badge-danger">必須</span></label>
+				<div class="col-sm-9">
+					<p>
+					<input type="text" th:field="*{c37}" />
+					</p>
+				</div>
+			</div>
+			<div class="form-row">
+				<label class="col-sm-3 col-form-label">
+					c38<span
+					class="badge badge-danger">必須</span></label>
+				<div class="col-sm-9">
+					<p>
+					<input type="text" th:field="*{c38}" />
+					</p>
+				</div>
+			</div>
+			<div class="form-row">
+				<label class="col-sm-3 col-form-label">
+					c39<span
+					class="badge badge-danger">必須</span></label>
+				<div class="col-sm-9">
+					<p>
+					<input type="text" th:field="*{c39}" />
+					</p>
+				</div>
+			</div>
+			<div class="form-row">
+				<label class="col-sm-3 col-form-label">
+					c40<span
+					class="badge badge-danger">必須</span></label>
+				<div class="col-sm-9">
+					<p>
+					<input type="text" th:field="*{c40}" />
+					</p>
+				</div>
+			</div>
+			<div class="form-row">
+				<label class="col-sm-3 col-form-label">
+					c41<span
+					class="badge badge-danger">必須</span></label>
+				<div class="col-sm-9">
+					<p>
+					<input type="text" th:field="*{c41}" />
+					</p>
+				</div>
+			</div>
+			<div class="form-row">
+				<label class="col-sm-3 col-form-label">
+					c42<span
+					class="badge badge-danger">必須</span></label>
+				<div class="col-sm-9">
+					<p>
+					<input type="text" th:field="*{c42}" />
+					</p>
+				</div>
+			</div>
+			<div class="form-row">
+				<label class="col-sm-3 col-form-label">
+					c43<span
+					class="badge badge-danger">必須</span></label>
+				<div class="col-sm-9">
+					<p>
+					<input type="text" th:field="*{c43}" />
+					</p>
+				</div>
+			</div>
+			<div class="form-row">
+				<label class="col-sm-3 col-form-label">
+					c44<span
+					class="badge badge-danger">必須</span></label>
+				<div class="col-sm-9">
+					<p>
+					<input type="text" th:field="*{c44}" />
+					</p>
+				</div>
+			</div>
+			<div class="form-row">
+				<label class="col-sm-3 col-form-label">
+					c45<span
+					class="badge badge-danger">必須</span></label>
+				<div class="col-sm-9">
+					<p>
+					<input type="text" th:field="*{c45}" />
+					</p>
+				</div>
+			</div>
+			<div class="form-row">
+				<label class="col-sm-3 col-form-label">
+					c46<span
+					class="badge badge-danger">必須</span></label>
+				<div class="col-sm-9">
+					<p>
+					<input type="text" th:field="*{c46}" />
+					</p>
+				</div>
+			</div>
+			<div class="form-row">
+				<label class="col-sm-3 col-form-label">
+					c47<span
+					class="badge badge-danger">必須</span></label>
+				<div class="col-sm-9">
+					<p>
+					<input type="text" th:field="*{c47}" />
+					</p>
+				</div>
+			</div>
+			<div class="form-row">
+				<label class="col-sm-3 col-form-label">
+					c48<span
+					class="badge badge-danger">必須</span></label>
+				<div class="col-sm-9">
+					<p>
+					<input type="text" th:field="*{c48}" />
+					</p>
+				</div>
+			</div>
+			<div class="form-row">
+				<label class="col-sm-3 col-form-label">
+					c49<span
+					class="badge badge-danger">必須</span></label>
+				<div class="col-sm-9">
+					<p>
+					<input type="text" th:field="*{c49}" />
+					</p>
+				</div>
+			</div>
+			<div class="form-row">
+				<label class="col-sm-3 col-form-label">
+					c50<span
+					class="badge badge-danger">必須</span></label>
+				<div class="col-sm-9">
+					<p>
+					<input type="text" th:field="*{c50}" />
+					</p>
+				</div>
+			</div>
+			<div class="form-row">
+				<label class="col-sm-3 col-form-label">
+					c51<span
+					class="badge badge-danger">必須</span></label>
+				<div class="col-sm-9">
+					<p>
+					<input type="text" th:field="*{c51}" />
+					</p>
+				</div>
+			</div>
+			<div class="form-row">
+				<label class="col-sm-3 col-form-label">
+					c52<span
+					class="badge badge-danger">必須</span></label>
+				<div class="col-sm-9">
+					<p>
+					<input type="text" th:field="*{c52}" />
+					</p>
+				</div>
+			</div>
+			<div class="form-row">
+				<label class="col-sm-3 col-form-label">
+					c53<span
+					class="badge badge-danger">必須</span></label>
+				<div class="col-sm-9">
+					<p>
+					<input type="text" th:field="*{c53}" />
+					</p>
+				</div>
+			</div>
+			<div class="form-row">
+				<label class="col-sm-3 col-form-label">
+					c54<span
+					class="badge badge-danger">必須</span></label>
+				<div class="col-sm-9">
+					<p>
+					<input type="text" th:field="*{c54}" />
+					</p>
+				</div>
+			</div>
+			<div class="form-row">
+				<label class="col-sm-3 col-form-label">
+					c55<span
+					class="badge badge-danger">必須</span></label>
+				<div class="col-sm-9">
+					<p>
+					<input type="text" th:field="*{c55}" />
+					</p>
+				</div>
+			</div>
+			<div class="form-row">
+				<label class="col-sm-3 col-form-label">
+					c56<span
+					class="badge badge-danger">必須</span></label>
+				<div class="col-sm-9">
+					<p>
+					<input type="text" th:field="*{c56}" />
+					</p>
+				</div>
+			</div>
+			<div class="form-row">
+				<label class="col-sm-3 col-form-label">
+					c57<span
+					class="badge badge-danger">必須</span></label>
+				<div class="col-sm-9">
+					<p>
+					<input type="text" th:field="*{c57}" />
+					</p>
+				</div>
+			</div>
+			<div class="form-row">
+				<label class="col-sm-3 col-form-label">
+					c58<span
+					class="badge badge-danger">必須</span></label>
+				<div class="col-sm-9">
+					<p>
+					<input type="text" th:field="*{c58}" />
+					</p>
+				</div>
+			</div>
+			<div class="form-row">
+				<label class="col-sm-3 col-form-label">
+					time_stamp<span
+					class="badge badge-danger">必須</span></label>
+				<div class="col-sm-9">
+					<p>
+					<input type="text" th:field="*{time_stamp}" />
+					</p>
+				</div>
+			</div>
+			<div class="form-row">
+				<label class="col-sm-3 col-form-label">
+					s_id<span
+					class="badge badge-danger">必須</span></label>
+				<div class="col-sm-9">
+					<p>
+					<input type="text" th:field="*{s_id}" />
+					</p>
+				</div>
+			</div>
+			<div class="form-row">
+				<label class="col-sm-3 col-form-label">
+					req_id<span
+					class="badge badge-danger">必須</span></label>
+				<div class="col-sm-9">
+					<p>
+					<input type="text" th:field="*{req_id}" />
+					</p>
+				</div>
+			</div>
+			<div class="form-row">
+				<label class="col-sm-3 col-form-label">
+					p_id<span
+					class="badge badge-danger">必須</span></label>
+				<div class="col-sm-9">
+					<p>
+					<input type="text" th:field="*{p_id}" />
+					</p>
+				</div>
+			</div>
+			<div class="form-row">
+				<label class="col-sm-3 col-form-label">
+					nen<span
+					class="badge badge-danger">必須</span></label>
+				<div class="col-sm-9">
+					<p>
+					<input type="text" th:field="*{nen}" />
+					</p>
+				</div>
+			</div>
+			<div class="form-row">
+				<label class="col-sm-3 col-form-label">
+					tsuki<span
+					class="badge badge-danger">必須</span></label>
+				<div class="col-sm-9">
+					<p>
+					<input type="text" th:field="*{tsuki}" />
+					</p>
+				</div>
+			</div>
+			<div class="form-row">
+				<label class="col-sm-3 col-form-label">
+					g_id<span
+					class="badge badge-danger">必須</span></label>
+				<div class="col-sm-9">
+					<p>
+					<input type="text" th:field="*{g_id}" />
+					</p>
+				</div>
+			</div>
+			<div class="form-row">
+				<label class="col-sm-3 col-form-label">
+					o_id<span
+					class="badge badge-danger">必須</span></label>
+				<div class="col-sm-9">
+					<p>
+					<input type="text" th:field="*{o_id}" />
+					</p>
+				</div>
+			</div>
+
+			<div class="form-row">
+				<label class="col-sm-3 col-form-label"><span
+					class="badge badge-danger"></span></label>
+				<div class="col-sm-9">
+					<p>
+					<button type="submit" class="btn btn-warning">更新</button>
+					</p>
+				</div>
+			</div>
+			<div class="form-row">
+				<label class="col-sm-3 col-form-label"><span
+					class="badge badge-danger"></span></label>
+				<div class="col-sm-9">
+					<p>
+					<a href="/csv" class="btn btn-info">一覧画面へ</a>
+					</p>
+				</div>
+			</div>
+		</form>
+	</div>
+
+</body>
+</html>
