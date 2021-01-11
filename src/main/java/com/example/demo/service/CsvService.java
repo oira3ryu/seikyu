@@ -35,6 +35,10 @@ public class CsvService {
 		repository.save(csv);
 	}
 
+	public void saveAll(List<Csv> csvs) {
+		repository.saveAll(csvs);
+	}
+
 	public void delete(Integer id) {
 		repository.deleteById(id);
 	}

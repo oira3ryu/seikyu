@@ -15,46 +15,46 @@ import com.example.demo.model.Csv;
 import com.example.demo.service.CsvService;
 
 @Controller
-@RequestMapping("/Csv")
-public class CsvController {
+@RequestMapping("/csv")
+public class csvController {
 	@Autowired
-	private CsvService CsvService;
+	private CsvService csvService;
 
 	@GetMapping
 	  public String csvIndex(Model model) {
-	    List<Csv> csvs = CsvService.findAll();
+	    List<Csv> csvs = csvService.findAll();
 	    model.addAttribute("csvs", csvs);
 	    return "csvIndex";
 	}
 
 	@GetMapping("csvNew")
-	public String newCsv(Model model) {
+	public String newcsv(Model model) {
 		return "csvNew";
 	}
 
 	@GetMapping("{id}/edit")
 	public String edit(@PathVariable Integer id,Model model) {
-		Csv csv = CsvService.findOne(id);
+		Csv csv = csvService.findOne(id);
 		model.addAttribute("csv",csv);
 		return "csvEdit";
 	}
 
 	@PostMapping
 	public String create(@ModelAttribute Csv csv) {
-		CsvService.save(csv);
-		return "redirect:/Csv";
+		csvService.save(csv);
+		return "redirect:/csv";
 	}
 
 	@PostMapping("{id}/edit")
     public String update(@PathVariable Integer id, @ModelAttribute Csv csv) {
         csv.setId(id);
-        CsvService.save(csv);
-        return "redirect:/Csv";
+        csvService.save(csv);
+        return "redirect:/csv";
     }
 
     @PostMapping("{id}")
     public String destroy(@PathVariable Integer id) {
-        CsvService.delete(id);
-        return "redirect:/Csv";
+        csvService.delete(id);
+        return "redirect:/csv";
     }
 }
