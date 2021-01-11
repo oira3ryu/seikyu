@@ -31,10 +31,6 @@ public class CsvUploadController {
 			e.printStackTrace();
 			return "systemerror";
 		}
-<<<<<<< HEAD
-=======
-
->>>>>>> branch 'master' of https://github.com/oira3ryu/seikyu
     	return "redirect:/csv";
     }
 }
