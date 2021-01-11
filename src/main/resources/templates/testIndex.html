@@ -40,6 +40,7 @@
 
 					<th>
 <<<<<<< HEAD
+<<<<<<< HEAD
 					<form th:method="post" th:action="@{/upload/upload}" enctype="multipart/form-data">
 							<label style="margin:0;">
 								<span class="btn btn-primary">
@@ -84,6 +85,52 @@
 		//formタグにサブミット時イベントを設定
 
 		$('form').submit(function(event) {
+=======
+						<form th:method="post" th:action="@{/upload/upload}" enctype="multipart/form-data">
+							<label style="margin:0;">
+								<span class="btn btn-primary">
+									csv取込
+									<input type="file" name="fileData" style="display:none" onchange="$(this).next().trigger('click')" />
+									<input type="submit" style="display:none" />
+								</span>
+							</label>
+						</form>
+					</th>
+					<th><a href="/test/testNew" class="btn btn-primary">新規作成</a></th>
+					<th><a href="/" class="btn btn-info">メニュー</a></th>
+				</tr>
+			</thead>
+			<tbody>
+				<tr th:each="test : ${tests}" th:object="${test}">
+					<td th:text="*{id}"></td>
+					<td th:text="*{name}"></td>
+					<td th:text="*{price}"></td>
+					<td th:text="*{time_stamp}"></td>
+
+					<td><a th:href="@{/test/{id}/edit(id=*{id})}"
+						class="btn btn-primary">編集</a></td>
+					<td>
+						<form class="delForm" th:action="@{/test/{id}(id=*{id})}" th:method="post"
+							onSubmit="return delcheck()">
+							<input type="submit" class="btn btn-danger" value="削除" />
+						</form>
+					</td>
+				</tr>
+			</tbody>
+		</table>
+
+		<a href="/" class="btn btn-info">メニュー</a><span> <a
+			href="/test/testNew" class="btn btn-primary">新規作成</a>
+		</span>
+	</div>
+
+	<!-- jqueryの場合 -->
+
+	<script>
+		//formタグにサブミット時イベントを設定
+
+		$('.delForm').submit(function(event) {
+>>>>>>> branch 'master' of https://github.com/oira3ryu/seikyu
 =======
 						<form th:method="post" th:action="@{/upload/upload}" enctype="multipart/form-data">
 							<label style="margin:0;">
