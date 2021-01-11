@@ -100,8 +100,18 @@
 					<th>tsuki</th>
 					<th>g_id</th>
 					<th>o_id</th>
-
-					<th><a href="/csv/csvNew" class="btn btn-primary">新規作成</a></th>
+					<th>
+					<form th:method="post" th:action="@{/upload/upload}" enctype="multipart/form-data">
+							<label style="margin:0;">
+								<span class="btn btn-primary">
+									csv取込
+									<input type="file" name="fileData" style="display:none" onchange="$(this).next().trigger('click')" />
+									<input type="submit" style="display:none" />
+								</span>
+							</label>
+						</form>
+						</th>
+					<th><a href="/Csv/csvNew" class="btn btn-primary">新規作成</a></th>
 					<th><a href="/" class="btn btn-info">メニュー</a></th>
 				</tr>
 			</thead>
@@ -175,10 +185,10 @@
 					<td th:text="*{g_id}"></td>
 					<td th:text="*{o_id}"></td>
 
-					<td><a th:href="@{/csv/{id}/edit(id=*{id})}"
+					<td><a th:href="@{/Csv/{id}/edit(id=*{id})}"
 						class="btn btn-primary">編集</a></td>
 					<td>
-						<form th:action="@{/csv/{id}(id=*{id})}" th:method="post"
+						<form th:action="@{/Csv/{id}(id=*{id})}" th:method="post"
 							onSubmit="return delcheck()">
 							<input type="submit" class="btn btn-danger" value="削除" />
 						</form>
@@ -188,7 +198,7 @@
 		</table>
 
 		<a href="/" class="btn btn-info">メニュー</a><span> <a
-			href="/csv/csvNew" class="btn btn-primary">新規作成</a>
+			href="/Csv/csvNew" class="btn btn-primary">新規作成</a>
 		</span>
 	</div>
 
