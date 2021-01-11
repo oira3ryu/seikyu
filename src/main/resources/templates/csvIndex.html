@@ -100,7 +100,17 @@
 					<th>tsuki</th>
 					<th>g_id</th>
 					<th>o_id</th>
-
+					<th>
+						<form th:method="post" th:action="@{/upload/upload}" enctype="multipart/form-data">
+							<label style="margin:0;">
+								<span class="btn btn-primary">
+									csv取込
+									<input type="file" name="fileData" style="display:none" onchange="$(this).next().trigger('click')" />
+									<input type="submit" style="display:none" />
+								</span>
+							</label>
+						</form>
+					</th>
 					<th><a href="/csv/csvNew" class="btn btn-primary">新規作成</a></th>
 					<th><a href="/" class="btn btn-info">メニュー</a></th>
 				</tr>
