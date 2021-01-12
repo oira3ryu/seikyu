@@ -32,7 +32,7 @@
 		<div class="navbar">
 			<h1>csv 編集</h1>
 		</div>
-				<form th:action="@{/Csv/{id}/edit(id=*{id})}" th:method="post"
+				<form th:action="@{/csv/{id}/edit(id=*{id})}" th:method="post"
 					th:object="${csv}">
 
 			<div class="form-row">
@@ -719,7 +719,7 @@
 					class="badge badge-danger"></span></label>
 				<div class="col-sm-9">
 					<p>
-					<a href="/Csv" class="btn btn-info">一覧画面へ</a>
+					<a href="/csv" class="btn btn-info">一覧画面へ</a>
 					</p>
 				</div>
 			</div>

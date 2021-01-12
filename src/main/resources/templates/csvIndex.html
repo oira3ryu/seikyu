@@ -185,10 +185,10 @@
 					<td th:text="*{g_id}"></td>
 					<td th:text="*{o_id}"></td>
 
-					<td><a th:href="@{/Csv/{id}/edit(id=*{id})}"
+					<td><a th:href="@{/csv/{id}/edit(id=*{id})}"
 						class="btn btn-primary">編集</a></td>
 					<td>
-						<form th:action="@{/Csv/{id}(id=*{id})}" th:method="post"
+						<form th:action="@{/csv/{id}(id=*{id})}" th:method="post"
 							onSubmit="return delcheck()">
 							<input type="submit" class="btn btn-danger" value="削除" />
 						</form>
