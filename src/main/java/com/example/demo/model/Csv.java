@@ -32,7 +32,7 @@ public class Csv {
     private Integer id;
 
     @Column(name="c1")
-    @JsonAlias({"利用者番号","法人名","利用者番号"})
+    @JsonAlias({"利用者番号","法人名"})
     private String c1;
 
     @Column(name="c2")
@@ -44,15 +44,15 @@ public class Csv {
     private String c3;
 
     @Column(name="c4")
-    @JsonAlias({"提供月","事業所名","利用者名"})
+    @JsonAlias({"提供月","事業所名"})
     private String c4;
 
     @Column(name="c5")
-    @JsonAlias({"合計額","利用者番号","フリガナ（姓）"})
+    @JsonAlias({"合計額","フリガナ（姓）"})
     private String c5;
 
     @Column(name="c6")
-    @JsonAlias({"サービス費（保険請求）","利用者名","フリガナ（名）"})
+    @JsonAlias({"サービス費（保険請求）","フリガナ（名）"})
     private String c6;
 
     @Column(name="c7")
