@@ -29,6 +29,74 @@
 
 	<h1 class="my-3 ml-3">Csv マスタ</h1>
 
+	<!-- 選択用ドロップダウンリスト ここから -->
+	<form name="search" action="#"
+		th:action="@{/csv/search}"
+		th:object="${searchParam}" method="post" onChange="getValue()">
+		<div class="container">
+			<div class="form-row">
+				<div class="col-sm-9">
+					<p>
+						<label class="col-sm-3 col-form-label">サービス選択<span
+							class="badge badge-danger">選択</span></label> <select
+							style="border: black 1px solid; appearance: auto; width: 350px"
+							id="coid" name="coid"
+							onChange="setCoid(this[this.selectedIndex].value)">
+							<option value=""></option>
+							<option th:each="companylists : ${companylist}"
+								th:value="${companylists.id}"
+								th:selected="${companylists.id} == *{coid}">[[${companylists.name}]]</option>
+						</select> <a href="/company/companyIndex" th:href="@{/company}"
+							class="btn btn-primary btn-sm">施工者マスタ</a>
+					</p>
+				</div>
+				<div class="col-sm-9">
+					<p>
+						<label class="col-sm-3 col-form-label">ファイル選択<span
+							class="badge badge-danger">選択</span></label> <select
+							style="border: black 1px solid; appearance: auto; width: 350px"
+							id="fiid" name="fiid"
+							onChange="setFiid(this[this.selectedIndex].value)">
+							<option value=""></option>
+							<option th:each="fieldlists : ${fieldlist}"
+								th:value="${fieldlists.id}"
+								th:selected="${fieldlists.id} == *{fiid}">[[${fieldlists.number}]]
+								[[${fieldlists.name}]]</option>
+						</select> <a href="/field/fieldIndex" th:href="@{/field}"
+							class="btn btn-primary btn-sm">現場マスタ</a>
+					</p>
+				</div>
+				<div class="col-sm-9">
+					<p>
+						<label class="col-sm-3 col-form-label">開始日<span
+							class="badge badge-danger">選択</span></label> <input type="date"
+							id="recorddate" name="recorddate" th:field="*{recorddate}" /> <input
+							type="button" value="クリア" onclick="recorddateClear()" />
+					</p>
+				</div>
+
+				<div class="col-sm-9">
+					<p>
+						<label class="col-sm-3 col-form-label">終了日<span
+							class="badge badge-danger">選択</span></label> <input type="date"
+							id="recorddateEnd" name="recorddateEnd"
+							th:field="*{recorddateEnd}" /> <input type="button" value="クリア"
+							onclick="recorddateEndClear()" />
+					</p>
+				</div>
+				<div class="col-sm-9">
+					<p>
+						<label class="col-sm-3 col-form-label"><span
+							class="badge badge-danger"></span></label> <input type="submit"
+							value="実行" />
+					</p>
+				</div>
+
+			</div>
+		</div>
+	</form>
+	<!-- 選択用ドロップダウンリスト ここまで-->
+
 	<div class="col-5 ml-3">
 		<table class="table table-striped">
 			<thead>

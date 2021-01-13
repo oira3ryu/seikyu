@@ -27,43 +27,27 @@
 		integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy"
 		crossorigin="anonymous"></script>
 
-	<h1 class="my-3 ml-3">test マスタ</h1>
+	<h1 class="my-3 ml-3">業務 マスタ</h1>
 
 	<div class="col-5 ml-3">
 		<table class="table table-striped">
 			<thead>
 				<tr>
 					<th>ID</th>
-					<th>name</th>
-					<th>price</th>
-					<th>time_stamp</th>
+					<th>業務</th>
 
-					<th>
-						<form th:method="post" th:action="@{/upload/upload}" enctype="multipart/form-data">
-							<label style="margin:0;">
-								<span class="btn btn-primary">
-									csv取込
-									<input type="file" name="fileData" style="display:none" onchange="$(this).next().trigger('click')" />
-									<input type="submit" style="display:none" />
-								</span>
-							</label>
-						</form>
-					</th>
-					<th><a href="/test/testNew" class="btn btn-primary">新規作成</a></th>
+					<th><a href="/gyoumu/gyoumuNew" class="btn btn-primary">新規作成</a></th>
 					<th><a href="/" class="btn btn-info">メニュー</a></th>
 				</tr>
 			</thead>
 			<tbody>
-				<tr th:each="test : ${tests}" th:object="${test}">
-					<td th:text="*{id}"></td>
-					<td th:text="*{name}"></td>
-					<td th:text="*{price}"></td>
-					<td th:text="*{time_stamp}"></td>
-
-					<td><a th:href="@{/test/{id}/edit(id=*{id})}"
+				<tr th:each="gyoumu : ${gyoumus}" th:object="${gyoumu}">
+					<td th:text="*{g_id}"></td>
+					<td th:text="*{gyoumu}"></td>
+					<td><a th:href="@{/gyoumu/{id}/edit(id=*{g_id})}"
 						class="btn btn-primary">編集</a></td>
 					<td>
-						<form class="delForm" th:action="@{/test/{id}(id=*{id})}" th:method="post"
+						<form class="delForm" th:action="@{/gyoumu/{id}(id=*{g_id})}" th:method="post"
 							onSubmit="return delcheck()">
 							<input type="submit" class="btn btn-danger" value="削除" />
 						</form>
@@ -73,7 +57,7 @@
 		</table>
 
 		<a href="/" class="btn btn-info">メニュー</a><span> <a
-			href="/test/testNew" class="btn btn-primary">新規作成</a>
+			href="/gyoumu/gyoumuNew" class="btn btn-primary">新規作成</a>
 		</span>
 	</div>
 
