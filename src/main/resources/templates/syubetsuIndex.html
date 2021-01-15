@@ -45,16 +45,16 @@
 			</thead>
 			<tbody>
 				<tr th:each="syubetsu : ${syubetsus}" th:object="${syubetsu}">
-					<td th:text="*{ps_id}"></td>
-					<td th:text="*{syubetsu}"></td>
+					<td th:text="*{id}"></td>
+					<td th:text="*{name}"></td>
 					<td th:text="*{shisetsumei}"></td>
-					<td th:text="*{o_id}"></td>
-					<td th:text="*{s_id}"></td>
+					<td th:text="*{ofid}"></td>
+					<td th:text="*{sid}"></td>
 					<td th:text="*{hyoujimei}"></td>
-					<td><a th:href="@{/syubetsu/{id}/edit(id=*{ps_id})}"
+					<td><a th:href="@{/syubetsu/{id}/edit(id=*{id})}"
 						class="btn btn-primary">編集</a></td>
 					<td>
-						<form class="delForm" th:action="@{/syubetsu/{id}(id=*{ps_id})}" th:method="post"
+						<form class="delForm" th:action="@{/syubetsu/{id}(id=*{id})}" th:method="post"
 							onSubmit="return delcheck()">
 							<input type="submit" class="btn btn-danger" value="削除" />
 						</form>

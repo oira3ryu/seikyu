@@ -8,35 +8,35 @@ import javax.transaction.Transactional;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
-import com.example.demo.model.Gyoumu;
-import com.example.demo.repository.GyoumuRepository;
+import com.example.demo.model.Tsuki;
+import com.example.demo.repository.TsukiRepository;
 
 @Service
 @Transactional(rollbackOn=Exception.class)
-public class GyoumuService {
+public class TsukiService {
 
 	@Autowired
-	GyoumuRepository repository;
+	TsukiRepository repository;
 
-	public List<Gyoumu> findAll() {
+	public List<Tsuki> findAll() {
 		return repository.findAll();
 	}
 
-	public Gyoumu findOne(Integer id) {
-	    Optional<Gyoumu> gyoumu = repository.findById(id);
-	    if(gyoumu.isPresent()) {
-	       return gyoumu.get();
+	public Tsuki findOne(Integer id) {
+	    Optional<Tsuki> tsuki = repository.findById(id);
+	    if(tsuki.isPresent()) {
+	       return tsuki.get();
 	    }else {
 	       return null;
 	    }
 	}
 
-	public Gyoumu save(Gyoumu gyoumu) {
-		return repository.save(gyoumu);
+	public Tsuki save(Tsuki tsuki) {
+		return repository.save(tsuki);
 	}
 
-	public Gyoumu saveAll(List<Gyoumu> gyoumus) {
-		repository.saveAll(gyoumus);
+	public Tsuki saveAll(List<Tsuki> tsukis) {
+		repository.saveAll(tsukis);
 		return null;
 	}
 

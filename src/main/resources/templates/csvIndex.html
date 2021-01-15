@@ -39,51 +39,63 @@
 					<p>
 						<label class="col-sm-3 col-form-label">サービス選択<span
 							class="badge badge-danger">選択</span></label> <select
-							style="border: black 1px solid; appearance: auto; width: 350px"
-							id="coid" name="coid"
-							onChange="setCoid(this[this.selectedIndex].value)">
+							style="border: black 1px solid; appearance: auto;"
+							id="sid" name="syubetsu"
+							onChange="setSid(this[this.selectedIndex].value)">
 							<option value=""></option>
-							<option th:each="companylists : ${companylist}"
-								th:value="${companylists.id}"
-								th:selected="${companylists.id} == *{coid}">[[${companylists.name}]]</option>
-						</select> <a href="/company/companyIndex" th:href="@{/company}"
-							class="btn btn-primary btn-sm">施工者マスタ</a>
+							<option th:each="syubetsus : ${syubetsu}"
+								th:value="${syubetsus.id}"
+								th:selected="${syubetsus.id} == ${sid}">[[${syubetsus.name}]]</option>
+						</select> <a href="/syubetsu/syubetsuIndex" th:href="@{/syubetsu}"
+							class="btn btn-primary btn-sm">サービスマスタ</a>
 					</p>
 				</div>
 				<div class="col-sm-9">
 					<p>
-						<label class="col-sm-3 col-form-label">ファイル選択<span
+						<label class="col-sm-3 col-form-label">業務選択<span
 							class="badge badge-danger">選択</span></label> <select
-							style="border: black 1px solid; appearance: auto; width: 350px"
-							id="fiid" name="fiid"
-							onChange="setFiid(this[this.selectedIndex].value)">
+							style="border: black 1px solid; appearance: auto;"
+							id="gid" name="gyoumu"
+							onChange="setGid(this[this.selectedIndex].value)">
 							<option value=""></option>
-							<option th:each="fieldlists : ${fieldlist}"
-								th:value="${fieldlists.id}"
-								th:selected="${fieldlists.id} == *{fiid}">[[${fieldlists.number}]]
-								[[${fieldlists.name}]]</option>
-						</select> <a href="/field/fieldIndex" th:href="@{/field}"
-							class="btn btn-primary btn-sm">現場マスタ</a>
+							<option th:each="gyoumus : ${gyoumu}"
+								th:value="${gyoumus.id}"
+								th:selected="${gyoumus.id} == ${gid}">[[${gyoumus.name}]]</option>
+						</select> <a href="/gyoumu/gyoumuIndex" th:href="@{/gyoumu}"
+							class="btn btn-primary btn-sm">業務マスタ</a>
 					</p>
 				</div>
 				<div class="col-sm-9">
 					<p>
-						<label class="col-sm-3 col-form-label">開始日<span
-							class="badge badge-danger">選択</span></label> <input type="date"
-							id="recorddate" name="recorddate" th:field="*{recorddate}" /> <input
-							type="button" value="クリア" onclick="recorddateClear()" />
+						<label class="col-sm-3 col-form-label">年選択<span
+							class="badge badge-danger">選択</span></label> <select
+							style="border: black 1px solid; appearance: auto;"
+							id="nen" name="nen"
+							onChange="setNen(this[this.selectedIndex].value)">
+							<option value=""></option>
+							<option th:each="nens : ${nen}"
+								th:value="${nens.id}"
+								th:selected="${nens.value} == ${nen}">[[${nens.value}]]</option>
+						</select> <a href="/nen/nenIndex" th:href="@{/nen}"
+							class="btn btn-primary btn-sm">年マスタ</a>
+					</p>
+				</div>
+				<div class="col-sm-9">
+					<p>
+						<label class="col-sm-3 col-form-label">月選択<span
+							class="badge badge-danger">選択</span></label> <select
+							style="border: black 1px solid; appearance: auto;"
+							id="tsuki" name="tsuki"
+							onChange="settsuki(this[this.selectedIndex].value)">
+							<option value=""></option>
+							<option th:each="tsukis : ${tsuki}"
+								th:value="${tsukis.id}"
+								th:selected="${tsukis.value} == ${tsuki}">[[${tsukis.value}]]</option>
+						</select> <a href="/tsuki/tsukiIndex" th:href="@{/tsuki}"
+							class="btn btn-primary btn-sm">月マスタ</a>
 					</p>
 				</div>
 
-				<div class="col-sm-9">
-					<p>
-						<label class="col-sm-3 col-form-label">終了日<span
-							class="badge badge-danger">選択</span></label> <input type="date"
-							id="recorddateEnd" name="recorddateEnd"
-							th:field="*{recorddateEnd}" /> <input type="button" value="クリア"
-							onclick="recorddateEndClear()" />
-					</p>
-				</div>
 				<div class="col-sm-9">
 					<p>
 						<label class="col-sm-3 col-form-label"><span
@@ -160,14 +172,14 @@
 					<th>c56</th>
 					<th>c57</th>
 					<th>c58</th>
-					<th>time_stamp</th>
-					<th>s_id</th>
-					<th>p_id</th>
-					<th>req_id</th>
+					<th>timestamp</th>
+					<th>sid</th>
+					<th>pid</th>
+					<th>reqid</th>
 					<th>nen</th>
 					<th>tsuki</th>
-					<th>g_id</th>
-					<th>o_id</th>
+					<th>gid</th>
+					<th>ofid</th>
 					<th>
 						<form th:method="post" th:action="@{/upload/upload}" enctype="multipart/form-data">
 							<label style="margin:0;">
@@ -184,7 +196,7 @@
 				</tr>
 			</thead>
 			<tbody>
-				<tr th:each="csv : ${csvs}" th:object="${csv}">
+				<tr th:each="csvs : ${csv}" th:object="${csvs}">
 					<td th:text="*{id}"></td>
 					<td th:text="*{c1}"></td>
 					<td th:text="*{c2}"></td>
@@ -244,14 +256,14 @@
 					<td th:text="*{c56}"></td>
 					<td th:text="*{c57}"></td>
 					<td th:text="*{c58}"></td>
-					<td th:text="*{time_stamp}"></td>
-					<td th:text="*{s_id}"></td>
-					<td th:text="*{req_id}"></td>
-					<td th:text="*{p_id}"></td>
+					<td th:text="*{timestamp}"></td>
+					<td th:text="*{sid}"></td>
+					<td th:text="*{reqid}"></td>
+					<td th:text="*{pid}"></td>
 					<td th:text="*{nen}"></td>
 					<td th:text="*{tsuki}"></td>
-					<td th:text="*{g_id}"></td>
-					<td th:text="*{o_id}"></td>
+					<td th:text="*{gid}"></td>
+					<td th:text="*{ofid}"></td>
 
 					<td><a th:href="@{/csv/{id}/edit(id=*{id})}"
 						class="btn btn-primary">編集</a></td>

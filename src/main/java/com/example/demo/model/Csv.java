@@ -17,7 +17,7 @@ import lombok.NoArgsConstructor;
 import lombok.Setter;
 
 @Entity
-@Table(name="t_csv")
+@Table(name="csv")
 @NoArgsConstructor
 @AllArgsConstructor
 @Getter
@@ -203,17 +203,17 @@ public class Csv {
     @Column(name="c58")
     private String c58;
 
-    @Column(name="time_stamp")
-    private Timestamp time_stamp;
+    @Column(name="timestamp")
+    private Timestamp timestamp;
 
-    @Column(name="s_id")
-    private String s_id;
+    @Column(name="sid")
+    private String sid;
 
-    @Column(name="p_id")
-    private String p_id;
+    @Column(name="pid")
+    private String pid;
 
-    @Column(name="req_id")
-    private String req_id;
+    @Column(name="reqid")
+    private String reqid;
 
     @Column(name="nen")
     private String nen;
@@ -221,19 +221,19 @@ public class Csv {
     @Column(name="tsuki")
     private String tsuki;
 
-    @Column(name="g_id")
-    private String g_id;
+    @Column(name="gid")
+    private String gid;
 
-    @Column(name="o_id")
-    private Integer o_id;
+    @Column(name="ofid")
+    private Integer ofid;
 
     @PrePersist
     public void onPrePersist() {
-    	setTime_stamp(new Timestamp(System.currentTimeMillis()));
+    	setTimestamp(new Timestamp(System.currentTimeMillis()));
     }
 
     @PreUpdate
     public void onPreUpdate() {
-    	setTime_stamp(new Timestamp(System.currentTimeMillis()));
+    	setTimestamp(new Timestamp(System.currentTimeMillis()));
     }
 }

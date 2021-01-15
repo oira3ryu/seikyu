@@ -28,7 +28,7 @@ public class GyoumuController {
 	}
 
 	@GetMapping("gyoumuNew")
-	public String newgyoumu(Model model) {
+	public String newGyoumu(Model model) {
 		return "gyoumuNew";
 	}
 
@@ -47,7 +47,7 @@ public class GyoumuController {
 
 	@PostMapping("{id}/edit")
     public String update(@PathVariable Integer id, @ModelAttribute Gyoumu gyoumu) {
-        gyoumu.setG_id(id);
+        gyoumu.setId(id);
         gyoumuService.save(gyoumu);
         return "redirect:/gyoumu";
     }

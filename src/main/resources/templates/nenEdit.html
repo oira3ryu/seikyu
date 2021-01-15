@@ -30,10 +30,10 @@
 	<div class="container">
 
 		<div class="navbar">
-			<h1>種別 編集</h1>
+			<h1>年 編集</h1>
 		</div>
-				<form th:action="@{/syubetsu/{id}/edit(id=*{id})}" th:method="post"
-					th:object="${syubetsu}">
+				<form th:action="@{/nen/{id}/edit(id=*{id})}" th:method="post"
+					th:object="${nen}">
 
 			<div class="form-row">
 				<label class="col-sm-3 col-form-label">ID<span
@@ -46,51 +46,11 @@
 			</div>
 			<div class="form-row">
 				<label class="col-sm-3 col-form-label">
-					種別<span
+					年<span
 					class="badge badge-danger">必須</span></label>
 				<div class="col-sm-9">
 					<p>
-					<input type="text" th:field="*{name}" />
-					</p>
-				</div>
-			</div>
-			<div class="form-row">
-				<label class="col-sm-3 col-form-label">
-					施設名<span
-					class="badge badge-danger">必須</span></label>
-				<div class="col-sm-9">
-					<p>
-					<input type="text" th:field="*{shisetsumei}" />
-					</p>
-				</div>
-			</div>
-			<div class="form-row">
-				<label class="col-sm-3 col-form-label">
-					事業所ID<span
-					class="badge badge-danger">必須</span></label>
-				<div class="col-sm-9">
-					<p>
-					<input type="text" th:field="*{ofid}" />
-					</p>
-				</div>
-			</div>
-			<div class="form-row">
-				<label class="col-sm-3 col-form-label">
-					サービスID<span
-					class="badge badge-danger">必須</span></label>
-				<div class="col-sm-9">
-					<p>
-					<input type="text" th:field="*{sid}" />
-					</p>
-				</div>
-			</div>
-			<div class="form-row">
-				<label class="col-sm-3 col-form-label">
-					表示名<span
-					class="badge badge-danger">必須</span></label>
-				<div class="col-sm-9">
-					<p>
-					<input type="text" th:field="*{hyoujimei}" />
+					<input type="text" th:field="*{value}}" />
 					</p>
 				</div>
 			</div>
@@ -109,7 +69,7 @@
 					class="badge badge-danger"></span></label>
 				<div class="col-sm-9">
 					<p>
-					<a href="/syubetsu" class="btn btn-info">一覧画面へ</a>
+					<a href="/nen" class="btn btn-info">一覧画面へ</a>
 					</p>
 				</div>
 			</div>

@@ -13,18 +13,18 @@ import lombok.NoArgsConstructor;
 import lombok.Setter;
 
 @Entity
-@Table(name="gyoumu")
+@Table(name="tsuki")
 @NoArgsConstructor
 @AllArgsConstructor
 @Getter
 @Setter
 
-public class Gyoumu {
+public class Tsuki {
     @Id
     @Column(name="id")
     @GeneratedValue(strategy=GenerationType.IDENTITY)
     private Integer id;
 
-    @Column(name="name")
-    private String name;
+    @Column(name="value")
+    private String value;
 }

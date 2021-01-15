@@ -13,7 +13,7 @@ import lombok.NoArgsConstructor;
 import lombok.Setter;
 
 @Entity
-@Table(name="t_syubetsu")
+@Table(name="syubetsu")
 @NoArgsConstructor
 @AllArgsConstructor
 @Getter
@@ -21,21 +21,21 @@ import lombok.Setter;
 
 public class Syubetsu {
     @Id
-    @Column(name="ps_id")
+    @Column(name="id")
     @GeneratedValue(strategy=GenerationType.IDENTITY)
-    private Integer ps_id;
+    private Integer id;
 
-    @Column(name="syubetsu")
-    private String syubetsu;
+    @Column(name="name")
+    private String name;
 
     @Column(name="shisetsumei")
     private String shisetsumei;
 
-    @Column(name="o_id")
-    private String o_id;
+    @Column(name="ofid")
+    private String ofid;
 
-    @Column(name="s_id")
-    private String s_id;
+    @Column(name="sid")
+    private String sid;
 
     @Column(name="hyoujimei")
     private String hyoujimei;

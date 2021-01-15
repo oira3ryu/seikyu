@@ -47,7 +47,7 @@ public class SyubetsuController {
 
 	@PostMapping("{id}/edit")
     public String update(@PathVariable Integer id, @ModelAttribute Syubetsu syubetsu) {
-        syubetsu.setPs_id(id);
+        syubetsu.setId(id);
         syubetsuService.save(syubetsu);
         return "redirect:/syubetsu";
     }

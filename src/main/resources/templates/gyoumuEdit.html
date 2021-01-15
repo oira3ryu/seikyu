@@ -32,7 +32,7 @@
 		<div class="navbar">
 			<h1>業務 編集</h1>
 		</div>
-				<form th:action="@{/gyoumu/{id}/edit(id=*{g_id})}" th:method="post"
+				<form th:action="@{/gyoumu/{id}/edit(id=*{id})}" th:method="post"
 					th:object="${gyoumu}">
 
 			<div class="form-row">
@@ -40,7 +40,7 @@
 					class="badge badge-danger"></span></label>
 				<div class="col-sm-9">
 					<p>
-					<input type="text" th:field="*{g_id}" disabled/>
+					<input type="text" th:field="*{id}" disabled/>
 					</p>
 				</div>
 			</div>
@@ -50,7 +50,7 @@
 					class="badge badge-danger">必須</span></label>
 				<div class="col-sm-9">
 					<p>
-					<input type="text" th:field="*{gyoumu}" />
+					<input type="text" th:field="*{name}" />
 					</p>
 				</div>
 			</div>

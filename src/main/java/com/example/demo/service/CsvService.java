@@ -7,10 +7,13 @@ import javax.transaction.Transactional;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.domain.Sort;
+import org.springframework.data.jpa.domain.Specification;
 import org.springframework.stereotype.Service;
 
+import com.example.demo.form.CsvSearchForm;
 import com.example.demo.model.Csv;
 import com.example.demo.repository.CsvRepository;
+import com.example.demo.specification.CsvSpecifications;
 
 @Service
 @Transactional(rollbackOn=Exception.class)
@@ -31,6 +34,20 @@ public class CsvService {
 	       return null;
 	    }
 	}
+
+	public List<Csv> findByForm(CsvSearchForm searchParam) {
+
+        if (searchParam == null) {
+            return findAll();
+        }
+
+        return repository.findAll(Specification
+    			.where(CsvSpecifications.sidStr(searchParam.getSid()))
+        		.and(CsvSpecifications.gidStr(searchParam.getGid()))
+        		.and(CsvSpecifications.nenStr(searchParam.getNen()))
+        		.and(CsvSpecifications.tsukiStr(searchParam.getTsuki()))
+        		, Sort.by(Sort.Direction.ASC, "id"));
+    }
 
 	public void save(Csv csv) {
 		repository.save(csv);
