@@ -60,6 +60,8 @@ public class csvController {
 	    List<Tsuki> tsukis = tsukiService.findAll();
 	    model.addAttribute("tsuki", tsukis);
 
+	    model.addAttribute("searchParam", new Csv());
+
 	    return "csvIndex";
 	}
 

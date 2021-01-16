@@ -42,10 +42,10 @@ public class CsvService {
         }
 
         return repository.findAll(Specification
-    			.where(CsvSpecifications.sidStr(searchParam.getSid()))
-        		.and(CsvSpecifications.gidStr(searchParam.getGid()))
-        		.and(CsvSpecifications.nenStr(searchParam.getNen()))
-        		.and(CsvSpecifications.tsukiStr(searchParam.getTsuki()))
+    			.where(CsvSpecifications.sidEqual(searchParam.getSid()))
+        		.and(CsvSpecifications.gidEqual(searchParam.getGid()))
+        		.and(CsvSpecifications.nenEqual(searchParam.getNen()))
+        		.and(CsvSpecifications.tsukiEqual(searchParam.getTsuki()))
         		, Sort.by(Sort.Direction.ASC, "id"));
     }
 

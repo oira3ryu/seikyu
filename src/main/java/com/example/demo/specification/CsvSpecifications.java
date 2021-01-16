@@ -5,7 +5,6 @@ import javax.persistence.criteria.CriteriaQuery;
 import javax.persistence.criteria.Predicate;
 import javax.persistence.criteria.Root;
 
-import org.apache.commons.lang3.StringUtils;
 import org.springframework.data.jpa.domain.Specification;
 
 import com.example.demo.model.Csv;
@@ -19,9 +18,9 @@ public class CsvSpecifications {
     /**
      * 種別idが一致するデータを検索
      */
-    public static Specification<Csv> sidStr(String sid) {
+    public static Specification<Csv> sidEqual(String sid) {
 
-    	if (StringUtils.isBlank(sid)) {
+    	if (sid == null) {
     		return null;
     	}
 
@@ -36,9 +35,9 @@ public class CsvSpecifications {
     /**
      * 事業所idが一致するデータを検索
      */
-    public static Specification<Csv> gidStr(String gid) {
+    public static Specification<Csv> gidEqual(String gid) {
 
-    	if (StringUtils.isBlank(gid)) {
+    	if (gid == null) {
     		return null;
     	}
 
@@ -53,9 +52,9 @@ public class CsvSpecifications {
     /**
      * 年が一致するデータを検索
      */
-    public static Specification<Csv> nenStr(String nen) {
+    public static Specification<Csv> nenEqual(String nen) {
 
-    	if (StringUtils.isBlank(nen)) {
+    	if (nen == null) {
     		return null;
     	}
 
@@ -70,9 +69,9 @@ public class CsvSpecifications {
     /**
      * 月が一致するデータを検索
      */
-    public static Specification<Csv> tsukiStr(String tsuki) {
+    public static Specification<Csv> tsukiEqual(String tsuki) {
 
-    	if (StringUtils.isBlank(tsuki)) {
+    	if (tsuki == null) {
     		return null;
     	}
 

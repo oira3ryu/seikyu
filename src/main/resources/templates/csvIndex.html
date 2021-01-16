@@ -45,7 +45,7 @@
 							<option value=""></option>
 							<option th:each="syubetsus : ${syubetsu}"
 								th:value="${syubetsus.id}"
-								th:selected="${syubetsus.id} == ${sid}">[[${syubetsus.name}]]</option>
+								th:selected="${syubetsus.id} == *{sid}">[[${syubetsus.name}]]</option>
 						</select> <a href="/syubetsu/syubetsuIndex" th:href="@{/syubetsu}"
 							class="btn btn-primary btn-sm">サービスマスタ</a>
 					</p>
@@ -60,7 +60,7 @@
 							<option value=""></option>
 							<option th:each="gyoumus : ${gyoumu}"
 								th:value="${gyoumus.id}"
-								th:selected="${gyoumus.id} == ${gid}">[[${gyoumus.name}]]</option>
+								th:selected="${gyoumus.id} == *{gid}">[[${gyoumus.name}]]</option>
 						</select> <a href="/gyoumu/gyoumuIndex" th:href="@{/gyoumu}"
 							class="btn btn-primary btn-sm">業務マスタ</a>
 					</p>
@@ -74,8 +74,8 @@
 							onChange="setNen(this[this.selectedIndex].value)">
 							<option value=""></option>
 							<option th:each="nens : ${nen}"
-								th:value="${nens.id}"
-								th:selected="${nens.value} == ${nen}">[[${nens.value}]]</option>
+								th:value="${nens.value}"
+								th:selected="${nens.value} == *{nen}">[[${nens.value}]]</option>
 						</select> <a href="/nen/nenIndex" th:href="@{/nen}"
 							class="btn btn-primary btn-sm">年マスタ</a>
 					</p>
@@ -89,8 +89,8 @@
 							onChange="settsuki(this[this.selectedIndex].value)">
 							<option value=""></option>
 							<option th:each="tsukis : ${tsuki}"
-								th:value="${tsukis.id}"
-								th:selected="${tsukis.value} == ${tsuki}">[[${tsukis.value}]]</option>
+								th:value="${tsukis.value}"
+								th:selected="${tsukis.value} == *{tsuki}">[[${tsukis.value}]]</option>
 						</select> <a href="/tsuki/tsukiIndex" th:href="@{/tsuki}"
 							class="btn btn-primary btn-sm">月マスタ</a>
 					</p>
@@ -110,6 +110,22 @@
 	<!-- 選択用ドロップダウンリスト ここまで-->
 
 	<div class="col-5 ml-3">
+		<table>
+				<tr>
+					<th><a href="/" class="btn btn-info">メニュー</a></th>
+					<th><a href="/csv/csvNew" class="btn btn-primary">新規作成</a></th>
+					<th>
+						<form th:method="post" th:action="@{/upload/upload}" enctype="multipart/form-data">
+							<label style="margin:0;">
+								<span class="btn btn-primary">
+									csv取込
+									<input type="file" name="fileData" style="display:none" onchange="$(this).next().trigger('click')" />
+									<input type="submit" style="display:none" />
+								</span>
+							</label>
+						</form>
+					</th>				</tr>
+		</table>
 		<table class="table table-striped">
 			<thead>
 				<tr>
@@ -180,19 +196,6 @@
 					<th>tsuki</th>
 					<th>gid</th>
 					<th>ofid</th>
-					<th>
-						<form th:method="post" th:action="@{/upload/upload}" enctype="multipart/form-data">
-							<label style="margin:0;">
-								<span class="btn btn-primary">
-									csv取込
-									<input type="file" name="fileData" style="display:none" onchange="$(this).next().trigger('click')" />
-									<input type="submit" style="display:none" />
-								</span>
-							</label>
-						</form>
-					</th>
-					<th><a href="/csv/csvNew" class="btn btn-primary">新規作成</a></th>
-					<th><a href="/" class="btn btn-info">メニュー</a></th>
 				</tr>
 			</thead>
 			<tbody>
