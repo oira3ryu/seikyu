@@ -27,6 +27,23 @@
 		integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy"
 		crossorigin="anonymous"></script>
 
+	<script type="text/javascript">
+	function setOfid(txt){
+
+	document.search.ofid,value = txt;
+
+	$("#syubetsu option").each(function(index,object) {
+		if ($(object).attr("class") == $("#office").val()) {
+			// 表示
+			$(object).show();
+		}else{
+			// 非表示
+			$(object).hide();
+		}
+	});
+	}
+	</script>
+
 	<h1 class="my-3 ml-3">Csv マスタ</h1>
 
 	<!-- 選択用ドロップダウンリスト ここから -->
@@ -37,14 +54,30 @@
 			<div class="form-row">
 				<div class="col-sm-9">
 					<p>
+						<label class="col-sm-3 col-form-label">事業所選択<span
+							class="badge badge-danger">選択</span></label> <select
+							style="border: black 1px solid; appearance: auto;"
+							id="office" name="office"
+							onChange="setOfid(this[this.selectedIndex].value)">
+							<option value=""></option>
+							<option th:each="offices : ${office}"
+								th:value="${offices.id}"
+								th:selected="${offices.id} == *{ofid}">[[${offices.name}]]</option>
+						</select> <a href="/office/officeIndex" th:href="@{/office}"
+							class="btn btn-primary btn-sm">事業所マスタ</a>
+					</p>
+				</div>
+				<div class="col-sm-9">
+					<p>
 						<label class="col-sm-3 col-form-label">サービス選択<span
 							class="badge badge-danger">選択</span></label> <select
 							style="border: black 1px solid; appearance: auto;"
-							id="sid" name="syubetsu"
+							id="syubetsu" name="syubetsu"
 							onChange="setSid(this[this.selectedIndex].value)">
 							<option value=""></option>
 							<option th:each="syubetsus : ${syubetsu}"
 								th:value="${syubetsus.id}"
+								th:classappend="${syubetsus.ofid}"
 								th:selected="${syubetsus.id} == *{sid}">[[${syubetsus.name}]]</option>
 						</select> <a href="/syubetsu/syubetsuIndex" th:href="@{/syubetsu}"
 							class="btn btn-primary btn-sm">サービスマスタ</a>
