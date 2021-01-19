@@ -27,115 +27,101 @@
 		integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy"
 		crossorigin="anonymous"></script>
 
-	<script language="JavaScript">
-
-	function setFlgid(txt)
-	{
-		document.office.flgid.value = txt;
-		select.selectedIndex = index;
-	}
-
-	</script>
-
 	<div class="container">
 
 		<div class="navbar">
-			<h1>事業所 編集</h1>
+			<h1>金融機関 新規入力</h1>
 		</div>
-				<form th:action="@{/office/{id}/edit(id=*{id})}" th:method="post"
-					th:object="${office}" id="office" name="office">
+
+		<form th:action="@{/bank}" th:method="post">
 
 			<div class="form-row">
-				<label class="col-sm-3 col-form-label">ID<span
-					class="badge badge-danger"></span></label>
+				<label class="col-sm-3 col-form-label">金融機関ID<span
+					class="badge badge-danger">必須</span></label>
 				<div class="col-sm-9">
 					<p>
-					<input type="text" th:field="*{id}" disabled/>
+						<input type="text" name="bid" />
 					</p>
 				</div>
 			</div>
 			<div class="form-row">
-				<label class="col-sm-3 col-form-label">
-					事業所コード<span
+				<label class="col-sm-3 col-form-label">金融機関コード<span
 					class="badge badge-danger">必須</span></label>
 				<div class="col-sm-9">
 					<p>
-					<input type="text" th:field="*{number}" />
+						<input type="text" name="bcode" />
 					</p>
 				</div>
 			</div>
 			<div class="form-row">
-				<label class="col-sm-3 col-form-label">
-					事業所名<span
+				<label class="col-sm-3 col-form-label">金融機関<span
 					class="badge badge-danger">必須</span></label>
 				<div class="col-sm-9">
 					<p>
-					<input type="text" th:field="*{name}" />
+						<input type="text" name="bname" />
 					</p>
 				</div>
 			</div>
 			<div class="form-row">
-				<label class="col-sm-3 col-form-label">
-					郵便番号<span
+				<label class="col-sm-3 col-form-label">金融機関省略名<span
 					class="badge badge-danger">必須</span></label>
 				<div class="col-sm-9">
 					<p>
-					<input type="text" th:field="*{pcode}" />
+						<input type="text" name="sbname" />
 					</p>
 				</div>
 			</div>
 			<div class="form-row">
-				<label class="col-sm-3 col-form-label">
-					住所<span
+				<label class="col-sm-3 col-form-label">支店コード<span
 					class="badge badge-danger">必須</span></label>
 				<div class="col-sm-9">
 					<p>
-					<input type="text" th:field="*{address}" />
+						<input type="text" name="brcode" />
 					</p>
 				</div>
 			</div>
 			<div class="form-row">
-				<label class="col-sm-3 col-form-label">
-					電話番号<span
+				<label class="col-sm-3 col-form-label">支店名<span
 					class="badge badge-danger">必須</span></label>
 				<div class="col-sm-9">
 					<p>
-					<input type="text" th:field="*{phonenumber}" />
+						<input type="text" name="brname" />
 					</p>
 				</div>
 			</div>
 			<div class="form-row">
-				<label class="col-sm-3 col-form-label">
-					管理者<span
+				<label class="col-sm-3 col-form-label">引落日<span
 					class="badge badge-danger">必須</span></label>
 				<div class="col-sm-9">
 					<p>
-					<input type="text" th:field="*{manager}" />
+						<input type="text" name="sd" />
 					</p>
 				</div>
 			</div>
 			<div class="form-row">
-				<label class="col-sm-3 col-form-label">
-					担当者<span
+				<label class="col-sm-3 col-form-label">引落月<span
 					class="badge badge-danger">必須</span></label>
 				<div class="col-sm-9">
 					<p>
-					<input type="text" th:field="*{stuff}" />
+						<input type="text" name="sm" />
 					</p>
 				</div>
 			</div>
 			<div class="form-row">
-				<label class="col-sm-3 col-form-label"> 可／否<span
+				<label class="col-sm-3 col-form-label">引落年<span
 					class="badge badge-danger">必須</span></label>
 				<div class="col-sm-9">
 					<p>
-						<input type="hidden" name="flgid" th:field="*{flgid}" /> <select
-							id="flg" onChange="setFlgid(this[this.selectedIndex].value)">
-							<option th:each="flgs : ${flg}" th:value="${flgs.id}"
-								th:selected="${flgs.id}==${office.flgid}">[[${flgs.value}]]</option>
-						</select>
+						<input type="text" name="sy" />
 					</p>
 				</div>
+			</div>
+
+			<div class="form-row">
+					<p>
+						<input type="submit"
+							class="btn btn-warning" value="作成" />
+					</p>
 			</div>
 
 			<div class="form-row">
@@ -143,16 +129,7 @@
 					class="badge badge-danger"></span></label>
 				<div class="col-sm-9">
 					<p>
-					<button type="submit" class="btn btn-warning">更新</button>
-					</p>
-				</div>
-			</div>
-			<div class="form-row">
-				<label class="col-sm-3 col-form-label"><span
-					class="badge badge-danger"></span></label>
-				<div class="col-sm-9">
-					<p>
-					<a href="/office" class="btn btn-info">一覧画面へ</a>
+						<a href="/office" class="btn btn-info">一覧画面へ</a>
 					</p>
 				</div>
 			</div>

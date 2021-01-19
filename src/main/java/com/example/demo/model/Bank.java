@@ -13,39 +13,42 @@ import lombok.NoArgsConstructor;
 import lombok.Setter;
 
 @Entity
-@Table(name="office")
+@Table(name="bank")
 @NoArgsConstructor
 @AllArgsConstructor
 @Getter
 @Setter
 
-public class Office {
+public class Bank {
     @Id
     @Column(name="id")
     @GeneratedValue(strategy=GenerationType.IDENTITY)
     private Integer id;
 
-    @Column(name="number")
-    private String number;
+    @Column(name="bid")
+    private String bid;
 
-    @Column(name="name")
-    private String name;
+    @Column(name="bcode")
+    private String bcode;
 
-    @Column(name="pcode")
-    private String pcode;
+    @Column(name="bname")
+    private String bname;
 
-    @Column(name="address")
-    private String address;
+    @Column(name="sbname")
+    private String sbname;
 
-    @Column(name="phonenumber")
-    private String phonenumber;
+    @Column(name="brcode")
+    private String brcode;
 
-    @Column(name="manager")
-    private String manager;
+    @Column(name="brname")
+    private String brname;
 
-    @Column(name="stuff")
-    private String stuff;
+    @Column(name="sd")
+    private String sd;
 
-    @Column(name="flgid")
-    private String flgid;
+    @Column(name="sm")
+    private String sm;
+
+    @Column(name="sy")
+    private String sy;
 }

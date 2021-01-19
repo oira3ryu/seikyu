@@ -10,9 +10,6 @@
 	href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css"
 	integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO"
 	crossorigin="anonymous">
-
-<link href="/css/style.css" rel="stylesheet"></link>
-
 </head>
 <body>
 
@@ -30,46 +27,27 @@
 		integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy"
 		crossorigin="anonymous"></script>
 
-	<h1 class="my-3 ml-3">事業所 マスタ</h1>
+	<h1 class="my-3 ml-3">フラグ マスタ</h1>
 
 	<div class="col-5 ml-3">
 		<table class="table table-striped">
 			<thead>
 				<tr>
 					<th>ID</th>
-					<th>事業所コード</th>
-					<th>事業所名</th>
-					<th>郵便番号</th>
-					<th>住所</th>
-					<th>電話番号</th>
-					<th>管理者</th>
-					<th>担当者</th>
-					<th>可／否</th>
+					<th>フラグ</th>
 
-					<th><a href="/office/officeNew" class="btn btn-primary">新規作成</a></th>
+					<th><a href="/flg/flgNew" class="btn btn-primary">新規作成</a></th>
 					<th><a href="/" class="btn btn-info">メニュー</a></th>
 				</tr>
 			</thead>
 			<tbody>
-				<tr th:each="office : ${offices}" th:object="${office}">
+				<tr th:each="flg : ${flgs}" th:object="${flg}">
 					<td th:text="*{id}"></td>
-					<td th:text="*{number}"></td>
-					<td th:text="*{name}"></td>
-					<td th:text="*{pcode}"></td>
-					<td th:text="*{address}"></td>
-					<td th:text="*{phonenumber}"></td>
-					<td th:text="*{manager}"></td>
-					<td th:text="*{stuff}"></td>
-					<td><select id="flgid" style="pointer-events: none;"
-						tabindex="-1">
-							<option th:each="flgs : ${flg}" th:value="${flgs.id}"
-								th:selected="${flgs.id} == *{flgid}">[[${flgs.value}]]</option>
-					</select></td>
-
-					<td><a th:href="@{/office/{id}/edit(id=*{id})}"
+					<td th:text="*{value}"></td>
+					<td><a th:href="@{/flg/{id}/edit(id=*{id})}"
 						class="btn btn-primary">編集</a></td>
 					<td>
-						<form class="delForm" th:action="@{/office/{id}(id=*{id})}" th:method="post"
+						<form class="delForm" th:action="@{/flg/{id}(id=*{id})}" th:method="post"
 							onSubmit="return delcheck()">
 							<input type="submit" class="btn btn-danger" value="削除" />
 						</form>
@@ -79,7 +57,7 @@
 		</table>
 
 		<a href="/" class="btn btn-info">メニュー</a><span> <a
-			href="/office/officeNew" class="btn btn-primary">新規作成</a>
+			href="/flg/flgNew" class="btn btn-primary">新規作成</a>
 		</span>
 	</div>
 

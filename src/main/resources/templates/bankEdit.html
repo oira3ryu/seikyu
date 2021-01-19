@@ -27,23 +27,13 @@
 		integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy"
 		crossorigin="anonymous"></script>
 
-	<script language="JavaScript">
-
-	function setFlgid(txt)
-	{
-		document.office.flgid.value = txt;
-		select.selectedIndex = index;
-	}
-
-	</script>
-
 	<div class="container">
 
 		<div class="navbar">
-			<h1>事業所 編集</h1>
+			<h1>金融機関 編集</h1>
 		</div>
-				<form th:action="@{/office/{id}/edit(id=*{id})}" th:method="post"
-					th:object="${office}" id="office" name="office">
+				<form th:action="@{/bank/{id}/edit(id=*{id})}" th:method="post"
+					th:object="${bank}">
 
 			<div class="form-row">
 				<label class="col-sm-3 col-form-label">ID<span
@@ -55,85 +45,89 @@
 				</div>
 			</div>
 			<div class="form-row">
-				<label class="col-sm-3 col-form-label">
-					事業所コード<span
-					class="badge badge-danger">必須</span></label>
+				<label class="col-sm-3 col-form-label">金融機関ID<span
+					class="badge badge-danger"></span></label>
 				<div class="col-sm-9">
 					<p>
-					<input type="text" th:field="*{number}" />
+					<input type="text" th:field="*{bid}" />
+					</p>
+				</div>
+			</div>
+			<div class="form-row">
+				<label class="col-sm-3 col-form-label">金融機関コード<span
+					class="badge badge-danger"></span></label>
+				<div class="col-sm-9">
+					<p>
+					<input type="text" th:field="*{bcode}" />
 					</p>
 				</div>
 			</div>
 			<div class="form-row">
 				<label class="col-sm-3 col-form-label">
-					事業所名<span
+					金融機関名<span
 					class="badge badge-danger">必須</span></label>
 				<div class="col-sm-9">
 					<p>
-					<input type="text" th:field="*{name}" />
+					<input type="text" th:field="*{bname}" />
 					</p>
 				</div>
 			</div>
 			<div class="form-row">
 				<label class="col-sm-3 col-form-label">
-					郵便番号<span
+					金融機関省略名<span
 					class="badge badge-danger">必須</span></label>
 				<div class="col-sm-9">
 					<p>
-					<input type="text" th:field="*{pcode}" />
+					<input type="text" th:field="*{sbname}" />
+					</p>
+				</div>
+			</div>
+			<div class="form-row">
+				<label class="col-sm-3 col-form-label">支店コード<span
+					class="badge badge-danger"></span></label>
+				<div class="col-sm-9">
+					<p>
+					<input type="text" th:field="*{brcode}" />
 					</p>
 				</div>
 			</div>
 			<div class="form-row">
 				<label class="col-sm-3 col-form-label">
-					住所<span
+					支店名<span
 					class="badge badge-danger">必須</span></label>
 				<div class="col-sm-9">
 					<p>
-					<input type="text" th:field="*{address}" />
+					<input type="text" th:field="*{brname}" />
 					</p>
 				</div>
 			</div>
 			<div class="form-row">
 				<label class="col-sm-3 col-form-label">
-					電話番号<span
+					引落日<span
 					class="badge badge-danger">必須</span></label>
 				<div class="col-sm-9">
 					<p>
-					<input type="text" th:field="*{phonenumber}" />
+					<input type="text" th:field="*{sd}" />
 					</p>
 				</div>
 			</div>
 			<div class="form-row">
 				<label class="col-sm-3 col-form-label">
-					管理者<span
+					引落月<span
 					class="badge badge-danger">必須</span></label>
 				<div class="col-sm-9">
 					<p>
-					<input type="text" th:field="*{manager}" />
+					<input type="text" th:field="*{sm}" />
 					</p>
 				</div>
 			</div>
 			<div class="form-row">
 				<label class="col-sm-3 col-form-label">
-					担当者<span
+					引落年<span
 					class="badge badge-danger">必須</span></label>
 				<div class="col-sm-9">
 					<p>
-					<input type="text" th:field="*{stuff}" />
-					</p>
-				</div>
-			</div>
-			<div class="form-row">
-				<label class="col-sm-3 col-form-label"> 可／否<span
-					class="badge badge-danger">必須</span></label>
-				<div class="col-sm-9">
-					<p>
-						<input type="hidden" name="flgid" th:field="*{flgid}" /> <select
-							id="flg" onChange="setFlgid(this[this.selectedIndex].value)">
-							<option th:each="flgs : ${flg}" th:value="${flgs.id}"
-								th:selected="${flgs.id}==${office.flgid}">[[${flgs.value}]]</option>
-						</select>
+					<input type="text" th:field="*{sy}" />
 					</p>
 				</div>
 			</div>
@@ -152,7 +146,7 @@
 					class="badge badge-danger"></span></label>
 				<div class="col-sm-9">
 					<p>
-					<a href="/office" class="btn btn-info">一覧画面へ</a>
+					<a href="/bank" class="btn btn-info">一覧画面へ</a>
 					</p>
 				</div>
 			</div>

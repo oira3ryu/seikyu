@@ -13,39 +13,18 @@ import lombok.NoArgsConstructor;
 import lombok.Setter;
 
 @Entity
-@Table(name="office")
+@Table(name="flg")
 @NoArgsConstructor
 @AllArgsConstructor
 @Getter
 @Setter
 
-public class Office {
+public class Flg {
     @Id
     @Column(name="id")
     @GeneratedValue(strategy=GenerationType.IDENTITY)
     private Integer id;
 
-    @Column(name="number")
-    private String number;
-
-    @Column(name="name")
-    private String name;
-
-    @Column(name="pcode")
-    private String pcode;
-
-    @Column(name="address")
-    private String address;
-
-    @Column(name="phonenumber")
-    private String phonenumber;
-
-    @Column(name="manager")
-    private String manager;
-
-    @Column(name="stuff")
-    private String stuff;
-
-    @Column(name="flgid")
-    private String flgid;
+    @Column(name="value")
+    private String value;
 }

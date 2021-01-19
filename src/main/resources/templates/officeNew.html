@@ -27,13 +27,23 @@
 		integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy"
 		crossorigin="anonymous"></script>
 
+	<script language="JavaScript">
+
+	function setFlgid(txt)
+	{
+		document.office.flgid.value = txt;
+		select.selectedIndex = index;
+	}
+
+	</script>
+
 	<div class="container">
 
 		<div class="navbar">
 			<h1>事業所 新規入力</h1>
 		</div>
 
-		<form th:action="@{/office}" th:method="post">
+		<form th:action="@{/office}" th:method="post" id="office" name="office">
 
 			<div class="form-row">
 				<label class="col-sm-3 col-form-label">事業所コード<span
@@ -99,11 +109,14 @@
 				</div>
 			</div>
 			<div class="form-row">
-				<label class="col-sm-3 col-form-label">規定値<span
+				<label class="col-sm-3 col-form-label">可／否<span
 					class="badge badge-danger">必須</span></label>
 				<div class="col-sm-9">
 					<p>
-						<input type="text" name="flg" />
+						<input type="hidden" name="flgid" /><select id="flg"
+							onChange="setFlgid(this[this.selectedIndex].value)">
+							<option th:each="flgs : ${flg}" th:value="${flgs.flgid}">[[${flgs.value}]]</option>
+						</select>
 					</p>
 				</div>
 			</div>

@@ -11,7 +11,9 @@ import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 
+import com.example.demo.model.Flg;
 import com.example.demo.model.Office;
+import com.example.demo.service.FlgService;
 import com.example.demo.service.OfficeService;
 
 @Controller
@@ -20,15 +22,26 @@ public class OfficeController {
 	@Autowired
 	private OfficeService officeService;
 
+	@Autowired
+	private FlgService flgService;
+
 	@GetMapping
 	  public String officeIndex(Model model) {
 	    List<Office> offices = officeService.findAll();
 	    model.addAttribute("offices", offices);
+
+	    List<Flg> flgs = flgService.findAll();
+	    model.addAttribute("flg", flgs);
+
 	    return "officeIndex";
 	}
 
 	@GetMapping("officeNew")
 	public String newOffice(Model model) {
+
+	    List<Flg> flgs = flgService.findAll();
+	    model.addAttribute("flg", flgs);
+
 		return "officeNew";
 	}
 
@@ -36,6 +49,10 @@ public class OfficeController {
 	public String edit(@PathVariable Integer id,Model model) {
 		Office office = officeService.findOne(id);
 		model.addAttribute("office",office);
+
+	    List<Flg> flgs = flgService.findAll();
+	    model.addAttribute("flg", flgs);
+
 		return "officeEdit";
 	}
 

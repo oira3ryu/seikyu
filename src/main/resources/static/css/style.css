@@ -1,0 +1,15 @@
+.select-wrapper {
+    width: 200px;
+    overflow: hidden;
+}
+select {
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+
+    margin: 0;
+    border: 0;
+    outline: none;
+    padding: 0;
+    background: transparent;
+}
