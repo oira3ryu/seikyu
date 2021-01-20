@@ -42,7 +42,8 @@ public class CsvService {
         }
 
         return repository.findAll(Specification
-    			.where(CsvSpecifications.sidEqual(searchParam.getSid()))
+    			.where(CsvSpecifications.ofidEqual(searchParam.getOfid()))
+    			.and(CsvSpecifications.sidEqual(searchParam.getSid()))
         		.and(CsvSpecifications.gidEqual(searchParam.getGid()))
         		.and(CsvSpecifications.nenEqual(searchParam.getNen()))
         		.and(CsvSpecifications.tsukiEqual(searchParam.getTsuki()))

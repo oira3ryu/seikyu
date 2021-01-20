@@ -225,7 +225,7 @@ public class Csv {
     private String gid;
 
     @Column(name="ofid")
-    private Integer ofid;
+    private String ofid;
 
     @PrePersist
     public void onPrePersist() {

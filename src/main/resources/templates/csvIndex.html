@@ -30,7 +30,7 @@
 	<script type="text/javascript">
 	function setOfid(txt){
 
-	document.search.ofid,value = txt;
+	document.search.ofid.value = txt;
 
 	$("#syubetsu option").each(function(index,object) {
 		if ($(object).attr("class") == $("#office").val()) {
@@ -41,6 +41,23 @@
 			$(object).hide();
 		}
 	});
+	}
+
+	function setSid(txt){
+		document.search.sid.value = txt;
+	}
+
+	function setGid(txt){
+		document.search.gid.value = txt;
+	}
+
+	function setNen(txt){
+		document.search.txtnen.text = txt;
+	}
+
+
+	function setTsuki(txt){
+		document.search.txttsuki.text = txt;
 	}
 	</script>
 
@@ -88,7 +105,7 @@
 						<label class="col-sm-3 col-form-label">業務選択<span
 							class="badge badge-danger">選択</span></label> <select
 							style="border: black 1px solid; appearance: auto;"
-							id="gid" name="gyoumu"
+							id="gyoumu" name="gyoumu"
 							onChange="setGid(this[this.selectedIndex].value)">
 							<option value=""></option>
 							<option th:each="gyoumus : ${gyoumu}"
@@ -119,7 +136,7 @@
 							class="badge badge-danger">選択</span></label> <select
 							style="border: black 1px solid; appearance: auto;"
 							id="tsuki" name="tsuki"
-							onChange="settsuki(this[this.selectedIndex].value)">
+							onChange="setTsuki(this[this.selectedIndex].value)">
 							<option value=""></option>
 							<option th:each="tsukis : ${tsuki}"
 								th:value="${tsukis.value}"

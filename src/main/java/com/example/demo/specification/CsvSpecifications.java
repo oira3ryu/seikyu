@@ -16,6 +16,23 @@ public class CsvSpecifications {
 	}
 
     /**
+     * 事業所idが一致するデータを検索
+     */
+    public static Specification<Csv> ofidEqual(String ofid) {
+
+    	if (ofid == null) {
+    		return null;
+    	}
+
+        return new Specification<Csv>() {
+            @Override
+            public Predicate toPredicate(Root<Csv> root, CriteriaQuery<?> query, CriteriaBuilder cb) {
+                return cb.equal(root.get("ofid"), ofid);
+            }
+        };
+    }
+
+    /**
      * 種別idが一致するデータを検索
      */
     public static Specification<Csv> sidEqual(String sid) {
@@ -33,7 +50,7 @@ public class CsvSpecifications {
     }
 
     /**
-     * 事業所idが一致するデータを検索
+     * 業務idが一致するデータを検索
      */
     public static Specification<Csv> gidEqual(String gid) {
 
