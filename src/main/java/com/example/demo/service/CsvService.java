@@ -3,6 +3,8 @@ package com.example.demo.service;
 import java.util.List;
 import java.util.Optional;
 
+import javax.persistence.EntityManager;
+import javax.persistence.PersistenceContext;
 import javax.transaction.Transactional;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -20,7 +22,10 @@ import com.example.demo.specification.CsvSpecifications;
 public class CsvService {
 
 	@Autowired
-	private CsvRepository repository;
+	CsvRepository repository;
+
+	@PersistenceContext
+	private EntityManager em;
 
 	public List<Csv> findAll() {
 		return repository.findAll(Sort.by(Sort.Direction.ASC, "id"));
@@ -50,12 +55,13 @@ public class CsvService {
         		, Sort.by(Sort.Direction.ASC, "id"));
     }
 
-	public void save(Csv csv) {
-		repository.save(csv);
+	public Csv save(Csv csv) {
+		return repository.save(csv);
 	}
 
-	public void saveAll(List<Csv> csvs) {
-		repository.saveAll(csvs);
+	public List<Csv> saveAll(List<Csv> csvs) {
+		return repository.saveAll(csvs);
+
 	}
 
 	public void delete(Integer id) {
