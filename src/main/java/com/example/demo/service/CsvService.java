@@ -10,6 +10,9 @@ import javax.transaction.Transactional;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.domain.Sort;
 import org.springframework.data.jpa.domain.Specification;
+import org.springframework.jdbc.core.namedparam.BeanPropertySqlParameterSource;
+import org.springframework.jdbc.core.namedparam.NamedParameterJdbcTemplate;
+import org.springframework.jdbc.core.namedparam.SqlParameterSource;
 import org.springframework.stereotype.Service;
 
 import com.example.demo.form.CsvSearchForm;
@@ -26,6 +29,9 @@ public class CsvService {
 
 	@PersistenceContext
 	private EntityManager em;
+
+	@Autowired
+    private NamedParameterJdbcTemplate jdbcTemplate;
 
 	public List<Csv> findAll() {
 		return repository.findAll(Sort.by(Sort.Direction.ASC, "id"));
@@ -56,6 +62,14 @@ public class CsvService {
     }
 
 	public Csv save(Csv csv) {
+		SqlParameterSource param = new BeanPropertySqlParameterSource(csv);
+		if (csv.getId() == null) {
+			return null;
+		}else {
+			jdbcTemplate.update(
+                    "UPDATE csv SET nen = :nen, tsuki = :tsuki, ofid = :ofid, sid = :sid, gid = :gid WHERE id = :id",
+                    param);
+		}
 		return repository.save(csv);
 	}
 
